@@ -6,23 +6,24 @@ It performs basic mathematical operations such as sum, subtract, multiply and di
 
 ## Requirements
 
+- cmake >= 3.15
 - gcc >= 12.2.0
 
 ## How to build
 
 ```
-gcc main.c -o calculator
+cmake -B build
 ```
 
 ## How to test
 
 ```
-gcc test_main.c -o test_math && ./test_math
+cd build && ./test_calculator
 ```
 
 ## How to run
 
 ```
-./calculator
+cd build && ./calculator
 ```
 
