@@ -16,7 +16,7 @@ double div(int a, int b){
 	return (double)a / b;
 }
 
-double pow(int a, int b){
+double power(int a, int b){
 	double result = 1.0;
 
 	if(b < 0){

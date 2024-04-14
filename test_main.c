@@ -1,32 +1,37 @@
 #include "math.h"
 
-#include <assert.h>
-#include <stdio.h>
+#include <CUnit/Basic.h>
 
-int main(int argc, char** argv){
+static void test_math(void){
 	/* Test Sum */
-	assert(sum(4, 5) == 9);
+	CU_ASSERT(sum(4, 5) == 9);
 
 	/* Test Sub */
-	assert(sub(7, 8) == -1);
+	CU_ASSERT(sub(7, 8) == -1);
 
 	/* Test Mul */
-	assert(mul(6, 7) == 42);
+	CU_ASSERT(mul(6, 7) == 42);
 
 	/* Test Div */
-	assert(div(8, 4) == 2);
-	assert(div(6, 8) == 0.75);
+	CU_ASSERT(div(8, 4) == 2);
+	CU_ASSERT(div(6, 8) == 0.75);
 
-	/* Test pow */
-	assert(pow(2, 3) == 8);
-	assert(pow(3, 0) == 1);
-	assert(pow(-8, 1) == -8);
-	assert(pow(4, -1) == 0.25);
-	assert(pow(1, 435) == 1);
-	assert(pow(1, 4435) == 1);
+	/* Test power */
+	CU_ASSERT(power(2, 3) == 8);
+	CU_ASSERT(power(3, 0) == 1);
+	CU_ASSERT(power(-8, 1) == -8);
+	CU_ASSERT(power(4, -1) == 0.25);
+	CU_ASSERT(power(1, 435) == 1);
+	CU_ASSERT(power(1, 4435) == 1);
 
-	printf("All tests passed.");
+	CU_PASS("All tests passed.");
+}
 
+int main(int argc, char** argv){
+	CU_initialize_registry();
+	CU_pSuite pSuite = CU_add_suite("test-math", 0, 0);
+	CU_add_test(pSuite,"math", test_math);
+	CU_basic_run_tests();
 	return 0;
 }
 
