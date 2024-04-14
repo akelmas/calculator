@@ -8,6 +8,10 @@ int sub(int a, int b){
 	return a - b;
 }
 
+int mul(int a, int b){
+	return a * b;
+}
+
 int main(int argc, char** argv){
 	int operand1 = 0;
 	int operand2 = 0;
@@ -21,6 +25,9 @@ int main(int argc, char** argv){
 			break;
 		case '-':	
 			printf("%d", sub(operand1, operand2));
+			break;
+		case '*':
+			printf("%d", mul(operand1, operand2));
 			break;
 		default:
 			printf("Invalid operation");
