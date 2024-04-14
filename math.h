@@ -16,3 +16,21 @@ double div(int a, int b){
 	return (double)a / b;
 }
 
+double pow(int a, int b){
+	double result = 1.0;
+
+	if(b < 0){
+		while(b++){
+			result = mul(result, a);
+		}
+
+		return div(1, result);
+	}
+
+	while(b--){
+		result = mul(result, a);
+	}
+
+	return result;
+}
+
