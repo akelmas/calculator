@@ -15,6 +15,7 @@ int main(int argc, char** argv){
 
 	/* Test Div */
 	assert(div(8, 4) == 2);
+	assert(div(6, 8) == 0.75);
 
 	printf("All tests passed.");
 
