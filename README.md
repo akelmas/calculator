@@ -14,6 +14,12 @@ It performs basic mathematical operations such as sum, subtract, multiply and di
 gcc main.c -o calculator
 ```
 
+## How to test
+
+```
+gcc test_main.c -o test_math && ./test_math
+```
+
 ## How to run
 
 ```
